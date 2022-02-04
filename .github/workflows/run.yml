@@ -1,0 +1,43 @@
+# Αυτό το workflow θα τρέχει κάθε 1 ώρα
+
+name: Post to Discord
+
+# Εδώ βάζουμε κάθε πότε θέλουμε να τρέχει και σε ποιο branch.
+# Επίσης θα βάλω να μπορώ να το κάνω και manually trigger μέσω του UI στο GitHub
+on:
+  schedule:
+    - cron: '0 */1 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+
+# Κάθε workflow μπορεί να έχει 1 ή περισσότερα jobs
+jobs:
+  # Θα έχω μόνο ένα job, το οποίο θα το ονομάσω 'cosmos'
+  cosmos:
+    # Σε τι σύστημα θα το τρέξεις το job
+    runs-on: ubuntu-latest
+    env:
+      WEBHOOK_DISCORD: ${{ secrets.WEBHOOK_DISCORD }} # Μην το πειράξεις αυτό, το έχουμε βάλει στο GitHub Settings
+
+    # Περιέγραψε βήμα-προς-βήμα, τι θες να γίνει
+    steps:
+    # Πάρε το repo     
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+        # To format που περιμένεις είναι της μορφής: {owner}/{repo}.
+        repository: 'drpaneas/discordbot'
+    
+    # Σέταρε το περιβάλλον της Go για να μπορείς να κάνεις build    
+    - uses: actions/setup-go@v2
+
+    # Κάνε build
+    - name: Build
+      run: go build -v ./...
+  
+    # Τρέχα το εκτελέσιμο
+    - run: |
+        ./astroniodiscordnews
+
