@@ -39,5 +39,5 @@ jobs:
   
     # Τρέχα το εκτελέσιμο
     - run: |
-        ./astroniodiscordnews
+        ./discordbot
 
