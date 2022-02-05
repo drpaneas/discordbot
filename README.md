@@ -1,11 +1,11 @@
 # Discord Bot
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/drpaneas/discordbot)](https://goreportcard.com/report/github.com/drpaneas/discordbot)
+[![License](https://img.shields.io/:license-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![GoDoc](https://godoc.org/github.com/drpaneas/discordbot?status.svg)](https://pkg.go.dev/mod/github.com/drpaneas/discordbot)
 [![golangci-lint](https://github.com/drpaneas/discordbot/actions/workflows/golangci-lint.yml/badge.svg)](https://github.com/drpaneas/discordbot/actions/workflows/golangci-lint.yml)
 [![Go](https://github.com/drpaneas/discordbot/actions/workflows/test.yml/badge.svg)](https://github.com/drpaneas/discordbot/actions/workflows/test.yml)
 [![Every 1 Hour](https://github.com/drpaneas/discordbot/actions/workflows/run.yml/badge.svg)](https://github.com/drpaneas/discordbot/actions/workflows/run.yml)
-[![GoDoc](https://godoc.org/github.com/drpaneas/discordbot?status.svg)](https://pkg.go.dev/mod/github.com/drpaneas/discordbot)
-[![License](https://img.shields.io/:license-GPL3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![Go Report Card](https://goreportcard.com/badge/github.com/drpaneas/discordbot)](https://goreportcard.com/report/github.com/drpaneas/discordbot)
 
 ----
 
@@ -15,7 +15,7 @@
 
 ## Οδηγίες για build
 
-* Απαιτείται να έχεις εγκατεστημένη τη γλώσσα προγραμματισμού της Go (δες τις [οδηγίες](https://go.dev/doc/install)).
+* Απαιτείται να έχεις εγκατεστημένη τη γλώσσα προγραμματισμού Go (δες τις [οδηγίες](https://go.dev/doc/install)).
 * Στην συνέχεια κατεβάζεις τον κώδικα στον υπολογιστή σου με όποιον τρόπο θες (πχ `git clone https://github.com/drpaneas/discordbot`).
 * Και κάνεις build: `go build`
 
