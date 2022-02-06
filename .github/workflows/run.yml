@@ -32,6 +32,8 @@ jobs:
     
     # Σέταρε το περιβάλλον της Go για να μπορείς να κάνεις build    
     - uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
 
     # Κάνε build
     - name: Build
