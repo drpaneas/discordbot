@@ -7,7 +7,7 @@ require (
 	github.com/ecnepsnai/discord v1.2.1
 	github.com/k3a/html2text v1.0.8
 	github.com/mmcdole/gofeed v1.1.3
-	mvdan.cc/xurls/v2 v2.3.0
+	mvdan.cc/xurls/v2 v2.4.0
 )
 
 require (
