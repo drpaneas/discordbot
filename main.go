@@ -3,7 +3,8 @@ package main
 //nolint
 import (
 	"github.com/mmcdole/gofeed" // nolint
-	"time"                      //nolint
+	"log"
+	"time" //nolint
 )
 
 // Σημείωση: Βάλτε τo πρόγραμμα να τρέχει κάθε 60 λεπτά σε κάποιο CI/Scheduler
@@ -20,6 +21,7 @@ func main() {
 
 	// Επισκέψου κάθε RSS Feed και βάλε τις ειδήσεις του στο Discord, αν έχουν δημοσιευτεί εντός της ώρας
 	for _, feed := range feeds {
+		log.Println(feed)
 		postNewsPerFeed(fp, oneHourAgo, feed)
 	}
 }

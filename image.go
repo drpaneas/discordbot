@@ -10,20 +10,20 @@ func getImage(item *gofeed.Item, rssURL string) (image string) {
 	switch rssURL {
 	// Μερικά από τα sites παρέχουν την εικόνα μέσω του RSS Feed
 	case physicsgg:
-		if len(item.Extensions) > 0 {
-			image = item.Extensions["media"]["thumbnail"][0].Attrs["url"]
+		if value, ok := item.Extensions["media"]; ok {
+			image = value["thumbnail"][0].Attrs["url"]
 		}
 	case newScientist:
-		if len(item.Extensions) > 0 {
-			image = item.Extensions["media"]["thumbnail"][0].Attrs["url"]
+		if value, ok := item.Extensions["media"]; ok {
+			image = value["thumbnail"][0].Attrs["url"]
 		}
 	case spaceCom:
 		if len(item.Enclosures) > 0 {
 			image = item.Enclosures[0].URL
 		}
 	case universeToday:
-		if len(item.Extensions) > 0 {
-			image = item.Extensions["media"]["content"][0].Attrs["url"]
+		if value, ok := item.Extensions["media"]; ok {
+			image = value["content"][0].Attrs["url"]
 		}
 	// Για τα υπόλοιπα sites που δεν παρέχουν την εικόνα μέσω RSS, προσπάθησε να τη "ψαρέψεις" μέσα από τη HTML
 	default:
