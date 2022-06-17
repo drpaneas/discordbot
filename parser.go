@@ -4,12 +4,17 @@ package main
 import (
 	"fmt"
 	"github.com/mmcdole/gofeed"
+	"log"
 	"time" //nolint
 )
 
 // postNewsPerFeed "παρσάρει" το RSS και συλλέγει όλες τις απαραίτητες πληροφορίες που χρειαζόμαστε γύρω από την είδηση.
 func postNewsPerFeed(fp *gofeed.Parser, oneHourAgo time.Time, rssURL string) {
 	url, err := fp.ParseURL(rssURL)
+	if err != nil {
+		log.Println("Δεν μπορεί να φτιάξει το URL του RSS από το", rssURL)
+		return
+	}
 	feed, _ := url, err
 
 	// Πάρε το βασικό website link από το οποίο προέρχεται το RSS feed
