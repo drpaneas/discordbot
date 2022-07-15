@@ -11,11 +11,23 @@ func getImage(item *gofeed.Item, rssURL string) (image string) {
 	// Μερικά από τα sites παρέχουν την εικόνα μέσω του RSS Feed
 	case physicsgg:
 		if value, ok := item.Extensions["media"]; ok {
-			image = value["thumbnail"][0].Attrs["url"]
+			if value2, ok2 := value["thumbnail"]; ok2 {
+				if len(value2) >= 0 {
+					if _, ok3 := value2[0].Attrs["url"]; ok3 {
+						image = value["thumbnail"][0].Attrs["url"]
+					}
+				}
+			}
 		}
 	case newScientist:
 		if value, ok := item.Extensions["media"]; ok {
-			image = value["thumbnail"][0].Attrs["url"]
+			if value2, ok2 := value["thumbnail"]; ok2 {
+				if len(value2) >= 0 {
+					if _, ok3 := value2[0].Attrs["url"]; ok3 {
+						image = value["thumbnail"][0].Attrs["url"]
+					}
+				}
+			}
 		}
 	case spaceCom:
 		if len(item.Enclosures) > 0 {
@@ -23,7 +35,13 @@ func getImage(item *gofeed.Item, rssURL string) (image string) {
 		}
 	case universeToday:
 		if value, ok := item.Extensions["media"]; ok {
-			image = value["content"][0].Attrs["url"]
+			if value2, ok2 := value["content"]; ok2 {
+				if len(value2) >= 0 {
+					if _, ok3 := value2[0].Attrs["url"]; ok3 {
+						image = value["content"][0].Attrs["url"]
+					}
+				}
+			}
 		}
 	// Για τα υπόλοιπα sites που δεν παρέχουν την εικόνα μέσω RSS, προσπάθησε να τη "ψαρέψεις" μέσα από τη HTML
 	default:
