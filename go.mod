@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/badoux/goscraper v0.0.0-20190827161153-36995ce6b19f
 	github.com/ecnepsnai/discord v1.2.1
-	github.com/k3a/html2text v1.0.8
+	github.com/k3a/html2text v1.2.1
 	github.com/mmcdole/gofeed v1.2.1
 	mvdan.cc/xurls/v2 v2.4.0
 )
