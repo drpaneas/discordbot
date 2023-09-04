@@ -24,7 +24,7 @@ jobs:
     # Περιέγραψε βήμα-προς-βήμα, τι θες να γίνει
     steps:
     # Πάρε το repo     
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         ref: ${{ github.head_ref }}
         # To format που περιμένεις είναι της μορφής: {owner}/{repo}.
