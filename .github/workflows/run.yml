@@ -31,7 +31,7 @@ jobs:
         repository: 'drpaneas/discordbot'
     
     # Σέταρε το περιβάλλον της Go για να μπορείς να κάνεις build    
-    - uses: actions/setup-go@v4
+    - uses: actions/setup-go@v5
       with:
         go-version: 1.17
 
